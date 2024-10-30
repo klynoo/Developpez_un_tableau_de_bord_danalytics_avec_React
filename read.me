@@ -1,0 +1,63 @@
+src/
+├── api/
+│   └── apiService.ts          
+├── context/
+│   └── UserDataContext.tsx 
+├── components/
+│   ├── Header/
+│   │   ├── Header.tsx
+│   │   └── Header.module.css
+│   ├── Sidebar/
+│   │   ├── Sidebar.tsx
+│   │   └── Sidebar.module.css
+│   ├── Dashboard/
+│   │   ├── MainContent.tsx
+│   │   ├── Greeting.tsx
+│   │   ├── DailyActivity.tsx
+│   │   ├── AverageSessions.tsx
+│   │   ├── PerformanceRadar.tsx
+│   │   ├── ScoreChart.tsx
+│   │   ├── KeyData/
+│   │   │   ├── KeyDataCard.tsx
+│   │   │   └── KeyDataCard.module.css
+│   │   └── MainContent.module.css
+│   └── common/
+│       ├── Card.tsx
+│       └── ChartContainer.tsx
+├── App.tsx
+├── App.module.css
+└── index.tsx
+
+    Header/ :
+        Header.tsx : Contient la barre de navigation supérieure (avec les liens Accueil, Profil, Réglage, Communauté).
+        Header.module.css : Fichier de style pour la barre de navigation.
+
+    Sidebar/ :
+        Sidebar.tsx : Contient la barre latérale avec les icônes pour les différentes activités (yoga, natation, vélo, etc.).
+        Sidebar.module.css : Fichier de style pour la barre latérale.
+
+    Dashboard/ : Cette section contient tous les composants affichés dans la partie principale de la page.
+
+        MainContent.tsx : Conteneur principal qui organise la mise en page centrale.
+
+        Greeting.tsx : Composant pour l'en-tête d'accueil ("Bonjour Thomas") et le message de félicitations.
+
+        DailyActivity.tsx : Composant pour le graphique en barres qui montre l'activité quotidienne (poids et calories brûlées). Utilise D3 ou une bibliothèque comme recharts pour créer le graphique.
+
+        AverageSessions.tsx : Composant pour le graphique de la durée moyenne des sessions (en bas à gauche). Peut utiliser une courbe pour représenter la tendance.
+
+        PerformanceRadar.tsx : Composant pour le graphique radar "Intensité, Vitesse, Force, etc." (au centre en bas). Ce graphique peut être réalisé avec D3 ou une bibliothèque tierce.
+
+        ScoreChart.tsx : Composant pour le graphique en anneau du score ("12% de votre objectif"). Ce type de graphique peut aussi être fait avec D3 ou recharts.
+
+        KeyData/ :
+            KeyDataCard.tsx : Composant pour chaque "card" de données clés (Calories, Protéines, Glucides, Lipides).
+            KeyDataCard.module.css : Styles pour chaque carte individuelle (couleur, icônes, espacement).
+
+    common/ :
+        Card.tsx : Composant générique pour les cartes. Par exemple, il pourrait être utilisé pour créer le cadre des cartes de données clés, permettant de réutiliser le style.
+        ChartContainer.tsx : Composant conteneur générique pour tous les graphiques, pour gérer le style de base et l’espace.
+
+Structure des données et contexte
+
+Vous pouvez gérer les données de manière centralisée avec un contexte React ou une bibliothèque de gestion d'état comme Redux. Cela facilitera l’accès aux données pour les composants (comme DailyActivity, ScoreChart, etc.).
