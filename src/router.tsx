@@ -1,5 +1,6 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import MainContent from "./Dashboard/MainContent";
+import UserDataProvider from "./context/UserDataContext";
 
 // import NotFound from "../pages/NotFound";
 // import Home from "../pages/Home";
@@ -20,7 +21,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "user/:id",
-        element: <MainContent />,
+        element: (
+          <UserDataProvider>
+            <MainContent />
+          </UserDataProvider>
+        ),
       },
     ],
   },

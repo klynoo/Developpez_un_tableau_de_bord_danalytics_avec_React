@@ -4,21 +4,16 @@ interface ApiResponse<T> {
   data: T | null;
   error?: string;
 }
-async function fetchData<T>(endpoint: string): Promise<ApiResponse<T>> {
+export async function fetchData<T>(
+  url: string
+): Promise<{ data: T | null; error: string | null }> {
   try {
-    const url = `${API_URL}${endpoint}`;
-    const response = await fetch(url);
+    const response = await fetch(`http://localhost:3000${url}`);
+    const result = await response.json();
 
-    if (!response.ok) {
-      throw new Error(`Network response was not ok: ${response.statusText}`);
-    }
-
-    const data = await response.json();
-    return { data };
+    // Retourner directement `result.data` si c'est disponible, sinon `result`
+    return { data: result.data ?? result, error: null };
   } catch (error) {
-    const errorMessage = (error as Error).message;
-    return { data: null, error: errorMessage };
+    return { data: null, error: (error as Error).message };
   }
 }
-
-export { fetchData };
