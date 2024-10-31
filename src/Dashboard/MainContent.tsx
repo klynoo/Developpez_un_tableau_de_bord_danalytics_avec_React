@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { UserDataContext } from "../context/UserDataContext";
+import DailyActivity from "../DailyActivity";
 
 const MainContent = () => {
   const { userData, error } = useContext(UserDataContext);
 
   if (error) return <p>Error: {error}</p>;
-  if (!userData || !userData) return <p>Loading...</p>;
+  if (!userData) return <p>Loading...</p>;
 
   const { id, userInfos, todayScore } = userData;
 
@@ -16,6 +17,8 @@ const MainContent = () => {
       </h1>
       <p>Age: {userInfos.age}</p>
       <p>Score: {todayScore}</p>
+
+      {/* <DailyActivity data={userData} /> */}
     </div>
   );
 };
