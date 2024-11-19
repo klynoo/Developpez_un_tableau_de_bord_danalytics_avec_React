@@ -1,3 +1,5 @@
+-regarder pourquoi autant de requettes
+
 src/
 ├── api/
 │   └── apiService.ts          

@@ -26,9 +26,9 @@ interface UserActivity {
 
 interface UserAverageSessions {
   userId: number;
-  performance: {
-    day: string;
-    score: number;
+  sessions: {
+    day: number;
+    sessionLength: number;
   }[];
 }
 

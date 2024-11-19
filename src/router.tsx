@@ -1,21 +1,14 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import MainContent from "./Dashboard/MainContent";
 import UserDataProvider from "./context/UserDataContext";
-
-// import NotFound from "../pages/NotFound";
-// import Home from "../pages/Home";
-// import Header from "../layouts/Header";
-// import Footer from "../layouts/Footer";
-// import AccommodationDetail from "../components/AccomodationDetail";
-// import APropos from "../pages/APropos";
+import Header from "./Components/Layout/Header";
 
 export const router = createBrowserRouter([
   {
     element: (
       <>
-        {/* <Header /> */}
+        <Header />
         <Outlet />
-        {/* <Footer /> */}
       </>
     ),
     children: [

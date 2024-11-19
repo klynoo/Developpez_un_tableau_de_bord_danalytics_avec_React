@@ -1,12 +1,12 @@
 import React, { useEffect, useState, createContext, ReactNode } from "react";
 import { useParams } from "react-router-dom";
-import { fetchData } from "../apiService";
 import {
   UserMainData,
   UserActivity,
   UserAverageSessions,
   UserPerformance,
 } from "../UserMainDataTypes";
+import { fetchData } from "../Api/apiService";
 
 // Définition des types pour le contexte
 type UserDataContextType = {
