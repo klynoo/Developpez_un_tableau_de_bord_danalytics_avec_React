@@ -84,9 +84,8 @@ const AverageSessions: React.FC<Props> = ({ data }) => {
             tickFormatter={(day) => (day > 0 && day <= 7 ? formatDay(day) : "")}
             axisLine={false}
             tickLine={false}
-            tick={{ fill: "#ffffff", fontSize: 12 }}
+            tick={{ fill: "#ffffff", fontSize: 12, opacity: 0.504 }}
             fontFamily="Roboto"
-            fontSize="12px"
             fontStyle="normal"
             fontWeight="500"
           />

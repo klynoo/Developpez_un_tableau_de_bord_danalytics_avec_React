@@ -2,7 +2,7 @@ import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 interface Props {
-  score: number; // Le score doit être une valeur entre 0 et 1
+  score: number; 
 }
 
 const ScoreChart: React.FC<Props> = ({ score }) => {
@@ -25,9 +25,11 @@ const ScoreChart: React.FC<Props> = ({ score }) => {
       <h3
         style={{
           color: "#20253A",
-          fontSize: "16px",
-          marginBottom: "10px",
+          fontFamily: "Roboto",
+          fontSize: "15px",
+          fontStyle: "normal",
           fontWeight: 500,
+          marginBottom: "10px",
         }}
       >
         Score
@@ -52,7 +54,8 @@ const ScoreChart: React.FC<Props> = ({ score }) => {
             innerRadius="70%"
             outerRadius="80%"
             dataKey="value"
-            cornerRadius={10} // Arrondir les extrémités
+            cornerRadius={10}
+            stroke="none"
           >
             <Cell key="score" fill="#FF0000" />
             <Cell key="remainder" fill="transparent" />
@@ -63,7 +66,7 @@ const ScoreChart: React.FC<Props> = ({ score }) => {
       <div
         style={{
           position: "absolute",
-          top: "50%",
+          top: "55%",
           left: "50%",
           transform: "translate(-50%, -45%)",
           textAlign: "center",
@@ -86,6 +89,7 @@ const ScoreChart: React.FC<Props> = ({ score }) => {
             color: "#74798C",
             margin: 0,
             marginTop: 5,
+            width: "100px",
           }}
         >
           de votre objectif

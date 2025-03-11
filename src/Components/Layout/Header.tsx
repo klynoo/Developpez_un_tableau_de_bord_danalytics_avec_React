@@ -24,7 +24,6 @@ const Header = () => {
 
 export default Header;
 
-// Styled Components
 const Container = styled.div`
   width: 100%;
   height: 91px;
