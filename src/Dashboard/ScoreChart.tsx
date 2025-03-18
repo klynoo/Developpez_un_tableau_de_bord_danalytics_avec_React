@@ -2,7 +2,7 @@ import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 interface Props {
-  score: number; 
+  score: number;
 }
 
 const ScoreChart: React.FC<Props> = ({ score }) => {
@@ -62,7 +62,6 @@ const ScoreChart: React.FC<Props> = ({ score }) => {
           </Pie>
         </PieChart>
       </ResponsiveContainer>
-      {/* Texte centré */}
       <div
         style={{
           position: "absolute",

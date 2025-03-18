@@ -13,13 +13,11 @@ interface Props {
   data: UserAverageSessions["sessions"];
 }
 
-// Formater les jours de la semaine
 const formatDay = (day: number) => {
   const days = ["L", "M", "M", "J", "V", "S", "D"];
   return days[day - 1];
 };
 
-// Composant personnalisé pour le Tooltip
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     return (
@@ -40,15 +38,15 @@ const CustomTooltip = ({ active, payload }: any) => {
 };
 
 const AverageSessions: React.FC<Props> = ({ data }) => {
-  // Ajouter des points fictifs pour toucher les bords
   const extendedData = [
-    { day: 0, sessionLength: data[0]?.sessionLength || 0 }, // Point fictif à gauche
+    { day: 0, sessionLength: data[0]?.sessionLength || 0 },
     ...data,
     {
       day: data.length + 1,
       sessionLength: data[data.length - 1]?.sessionLength || 0,
-    }, // Point fictif à droite
+    },
   ];
+  console.log("extendedData", extendedData);
 
   return (
     <div

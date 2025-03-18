@@ -21,7 +21,7 @@ const MainContent = () => {
   if (!userData || !userActivity || !averageSessions || !userPerformance)
     return <LoadingMessage>Loading...</LoadingMessage>;
 
-  const { userInfos, todayScore, keyData } = userData;
+  const { userInfos, todayScore } = userData;
 
   return (
     <Container>
@@ -74,7 +74,6 @@ const MainContent = () => {
 
 export default MainContent;
 
-// Styled Components
 const Container = styled.div`
   display: flex;
   background-color: #fff;
@@ -140,12 +139,10 @@ const ValueContainer = styled.div`
   gap: 20px;
 `;
 
-// Conteneur pour DailyActivity pour qu'il occupe toute la largeur
 const FullWidthContainer = styled.div`
   width: 100%;
 `;
 
-// Conteneur pour les trois autres composants alignés côte à côte
 const RowContainer = styled.div`
   display: flex;
   justify-content: space-between;

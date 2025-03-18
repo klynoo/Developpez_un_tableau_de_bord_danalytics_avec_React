@@ -29,7 +29,7 @@ const renderPolarAngleAxisTick = (props: any) => {
     str.charAt(0).toUpperCase() + str.slice(1);
 
   // Calculer la différence entre la position du label et le centre
-  const deltaX = (x - cx) * 1.2; // Ajustez le multiplicateur pour éloigner davantage
+  const deltaX = (x - cx) * 1.2;
   const deltaY = (y - cy) * 1.2;
 
   return (

@@ -5,7 +5,7 @@ import styled from "styled-components";
 interface KeyDataCardProps {
   type: "calorieCount" | "proteinCount" | "carbohydrateCount" | "lipidCount";
   label: string;
-  icon: string; // Nouvelle prop pour l'image
+  icon: string;
 }
 
 const KeyDataCard: React.FC<KeyDataCardProps> = ({ type, label, icon }) => {

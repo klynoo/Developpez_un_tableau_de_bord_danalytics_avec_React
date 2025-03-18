@@ -75,9 +75,9 @@ const CustomLegend = (props: any) => {
             marginRight: index < payload.length - 1 ? 20 : 0,
             display: "flex",
             alignItems: "center",
-            color: "#74798C", // Couleur du texte
-            fontSize: 14, // Taille de la police
-            fontFamily: "Roboto", // Police
+            color: "#74798C",
+            fontSize: 14,
+            fontFamily: "Roboto",
           }}
         >
           <span
@@ -86,7 +86,7 @@ const CustomLegend = (props: any) => {
               width: 8,
               height: 8,
               backgroundColor: entry.color,
-              borderRadius: "50%", // Pour avoir un cercle
+              borderRadius: "50%",
               marginRight: 8,
             }}
           ></span>
@@ -97,7 +97,7 @@ const CustomLegend = (props: any) => {
   );
 };
 
-const DailyActivityChart: React.FC<Props> = ({ data }) => {
+const DailyActivity: React.FC<Props> = ({ data }) => {
   const formattedData = data.map((d) => ({
     ...d,
     day: formatDay(d.day),
@@ -157,13 +157,9 @@ const DailyActivityChart: React.FC<Props> = ({ data }) => {
             axisLine={false}
             tickLine={false}
             tickMargin={20}
-            domain={["dataMin - 1", "dataMax + 1"]} // Pour ajuster l'échelle
+            domain={["dataMin - 1", "dataMax + 1"]}
           />
-          <YAxis
-            yAxisId="calories"
-            dataKey="calories"
-            hide={true} // Cacher le deuxième axe Y
-          />
+          <YAxis yAxisId="calories" dataKey="calories" hide={true} />
           <Tooltip content={<CustomTooltip />} />
           <Legend
             align="right"
@@ -193,4 +189,4 @@ const DailyActivityChart: React.FC<Props> = ({ data }) => {
   );
 };
 
-export default DailyActivityChart;
+export default DailyActivity;
